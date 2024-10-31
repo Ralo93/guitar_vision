@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chord Relationships D3 Visualization</title>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <style>
+    .link {
+      stroke: #999;
+      stroke-opacity: 0.6;
+      stroke-width: 2px;
+    }
+    .node {
+      fill: #1f77b4;
+      stroke: #fff;
+      stroke-width: 1.5px;
+    }
+    text {
+      font: 12px sans-serif;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+<svg width="960" height="600"></svg>
+
+<script>
+  // Define the graph data
+  const graph = {
+    "nodes": [
+      { "id": "C Major" },
+      { "id": "G Major" },
+      { "id": "A Minor" },
+      { "id": "E Minor" },
+      { "id": "D Major" },
+      { "id": "B Minor" },
+      { "id": "F Major" },
+      { "id": "D Minor" }
+    ],
+    "links": [
+      { "source": "C Major", "target": "G Major", "type": "Perfect fifth" },
+      { "source": "G Major", "target": "D Major", "type": "Perfect fifth" },
+      { "source": "A Minor", "target": "E Minor", "type": "Perfect fifth" },
+      { "source": "C Major", "target": "A Minor", "type": "Relative" },
+      { "source": "G Major", "target": "E Minor", "type": "Relative" },
+      { "source": "D Major", "target": "B Minor", "type": "Relative" },
+      { "source": "F Major", "target": "D Minor", "type": "Relative" }
+    ]
+  };
+
+  const svg = d3.select("svg"),
+        width = +svg.attr("width"),
+        height = +svg.attr("height");
+
+  const simulation = d3.forceSimulation(graph.nodes)
+    .force("link", d3.forceLink(graph.links).id(d => d.id).distance(200))
+    .force("charge", d3.forceManyBody().strength(-400))
+    .force("center", d3.forceCenter(width / 2, height / 2));
+
+  const link = svg.append("g")
+    .attr("class", "links")
+    .selectAll("line")
+    .data(graph.links)
+    .enter().append("line")
+    .attr("class", "link")
+    .style("stroke-width", 2);
+
+  const node = svg.append("g")
+    .attr("class", "nodes")
+    .selectAll("circle")
+    .data(graph.nodes)
+    .enter().append("circle")
+    .attr("class", "node")
+    .attr("r", 10)
+    .call(d3.drag()
+      .on("start", dragstarted)
+      .on("drag", dragged)
+      .on("end", dragended));
+
+  const label = svg.append("g")
+    .attr("class", "labels")
+    .selectAll("text")
+    .data(graph.nodes)
+    .enter().append("text")
+    .attr("dy", -10)
+    .text(d => d.id);
+
+  const linkLabel = svg.append("g")
+    .attr("class", "linkLabels")
+    .selectAll("text")
+    .data(graph.links)
+    .enter().append("text")
+    .attr("dy", 4)
+    .text(d => d.type);
+
+  simulation.on("tick", () => {
+    link
+      .attr("x1", d => d.source.x)
+      .attr("y1", d => d.source.y)
+      .attr("x2", d => d.target.x)
+      .attr("y2", d => d.target.y);
+
+    node
+      .attr("cx", d => d.x)
+      .attr("cy", d => d.y);
+
+    label
+      .attr("x", d => d.x)
+      .attr("y", d => d.y);
+
+    linkLabel
+      .attr("x", d => (d.source.x + d.target.x) / 2)
+      .attr("y", d => (d.source.y + d.target.y) / 2);
+  });
+
+  function dragstarted(event, d) {
+    if (!event.active) simulation.alphaTarget(0.3).restart();
+    d.fx = d.x;
+    d.fy = d.y;
+  }
+
+  function dragged(event, d) {
+    d.fx = event.x;
+    d.fy = event.y;
+  }
+
+  function dragended(event, d) {
+    if (!event.active) simulation.alphaTarget(0);
+    d.fx = null;
+    d.fy = null;
+  }
+</script>
+
+</body>
+</html>
