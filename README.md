@@ -32,7 +32,7 @@ This is done via computing the fourier transformation from the original signal, 
 
 #### From the original signal:
 
-![image](https://github.com/user-attachments/assets/baab915a-25bb-420d-9388-0e2ec4338487)
+<img src="https://github.com/user-attachments/assets/baab915a-25bb-420d-9388-0e2ec4338487" alt="original signal" width="400"/>
 
 #### To the fourier transformed frequencies (FFT):
 
