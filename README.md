@@ -27,6 +27,7 @@ The so called Mel-Frequency Cepstral Coefficients captures audio data in a way t
   
 Let me try to explain:  
 The Mel scale is a perceptual scale of pitches, where each "Mel" unit represents an equally spaced step in perceived pitch. This scale is derived from how humans perceive sound frequencies; we are more sensitive to lower frequencies than higher ones.  
+The Mel scale divides the frequency domain into bins that are narrower at lower frequencies and wider at higher frequencies. This aligns with human auditory perception: we can easily distinguish between frequencies like 2000 Hz and 2500 Hz, but we struggle to detect differences between, for example, 10000 Hz and 10500 Hz, even though the frequency gap is the same.
 In MFCC computation, the frequency of audio is transformed onto this Mel scale to capture the way humans hear sound.  
 This is done via computing the fourier transformation from the original signal, giving us a conversion from the time-domain into the frequency domain resulting in a spectrum of frequencies:  
 
