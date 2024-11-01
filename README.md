@@ -17,7 +17,7 @@ This project classifies musical pitches by leveraging computer vision, mel spect
 - [License](#license)
 
 ## Overview
-The goal of this project is to classify musical pitches accurately from audio recordings. The project uses mel spectrograms of audio samples, which are processed with computer vision techniques and analyzed using transfer learning from the VGGish model (a CNN pre-trained on image data). Additionally, the project incorporates data synthesis to expand and diversify the dataset, hoping to improving the robustness and generalization of the model.
+The goal of this project is to classify musical pitches accurately from audio recordings. The project uses mel spectrograms of audio samples, which are processed with computer vision techniques and analyzed using transfer learning from the VGGish model (a CNN pre-trained on audio data). Additionally, the project incorporates data synthesis to expand and diversify the dataset, hoping to improving the robustness and generalization of the model.
 
 ## Challenges
 The very first challenge lies in translating audio data (in this case .wav-files) into something we can use as features. There are numeral features we could extract from audio data, like the following:
@@ -83,10 +83,9 @@ RMS (Root Mean Square, left) measures the average power or loudness of the signa
 
 For this project, I will focus on the first two features: Mel spectograms and chroma features.  
 
-## First iteration
+# First iteration
 - **Audio to Image Transformation**: Audio samples are converted into mel spectrogram images, creating a visual representation of pitch and frequency.
 - **Transfer Learning with VGGish**: The VGGish model, pre-trained on general audio data, is fine-tuned for pitch classification tasks.
-- **Data Synthesis and Augmentation**: Synthetic data generation is used to expand the dataset, introducing varied conditions that improve model performance and robustness.
 - **Pitch Classification**: Model outputs the classified pitch from a given audio sample.
 
 ## Dataset
