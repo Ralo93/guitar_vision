@@ -65,7 +65,7 @@ On the right we have a lower frequency resolution which is computationally less 
 
 Another approach I tried in this project is concerned with chroma features. These can easily be recognized as a pitch and are insensitive to the actual octave the chord is played, which make them a suitable alternative to the Mel spectograms for pitch detection.
 
-In this example, we also use an A-Major chord, and its easiy to spot which pitches are the most dominant: A, E and C# which make up the A-Major chord:
+In this example, we also use an A-Major chord, and its easiy to spot which pitches are the most dominant: A (the root), C# (major third) and E (perfect fifth) which make up the A-Major chord:
 
 <div align="center">
     <img src="https://github.com/user-attachments/assets/100bd829-7fad-4244-bfae-7a9fed9d33db" alt="original signal" width="600"/>
