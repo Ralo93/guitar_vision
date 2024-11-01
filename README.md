@@ -94,14 +94,17 @@ This dataset consists out of seven different chords, namely A-Minor, Bb-Major, C
   
 The dataset is considerably small, only having 140 samples per chord in the training set, and 40 samples in the test set.
 
-Example F-Major:
+### Examples:
+
+F-Major:
 
 [▶️ Play F-Major](https://drive.google.com/file/d/1nlIc4Q0YVQoFdVYccCpqwh9jKLc-NPwL/view?usp=sharing)
 
+A-Minor:
+
+[▶️ Play A-Minor](https://drive.google.com/file/d/151oZcGclXDwP9HWnFKk3NelCmvnMDQlH/view?usp=sharing)
 
 
-and transformed into mel spectrograms
-**Real Audio Samples**: Collected from available pitch-labeled datasets.
 
 ## Data Augmentation
 To address the limitations of a small initial dataset, synthesized audio is added. This synthesis includes variations in pitch, duration, and noise levels, aiding in training a model that generalizes well to new audio inputs.
