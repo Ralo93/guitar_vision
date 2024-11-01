@@ -33,7 +33,7 @@ The Mel scale divides the frequency domain into bins that are narrower at lower 
 In MFCC computation, the frequency of audio is transformed onto this Mel scale to capture the way humans hear sound.  
 This is done via computing the fourier transformation (actual multiple) from the original signal, giving us a conversion from the time-domain into the frequency domain resulting in a spectrum of frequencies, then creating a spectogram and scaling it on the Mel scale:  
 
-#### From the original signal:
+#### From the original signal, here a A-Major chord:
 
 <div align="center">
     <img src="https://github.com/user-attachments/assets/baab915a-25bb-420d-9388-0e2ec4338487" alt="original signal" width="600"/>
