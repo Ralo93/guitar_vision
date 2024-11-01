@@ -125,11 +125,11 @@ This model was trained on:
     <img src="https://github.com/user-attachments/assets/77606bc3-f451-42a4-a6d1-ce9ac680a5f7" alt="original signal" width="600"/>
 </div>
 
-
-The idea is using it as a convolutional base (a feature extractor) and retraining a custom head:
-
+  
+The idea is using it as a convolutional base (a feature extractor) and retraining a custom head:  
+  
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/9121f2f2-ac65-4be2-b7f4-8d73372cd8f8" alt="original signal" width="300"/>
+    <img src="https://github.com/user-attachments/assets/9121f2f2-ac65-4be2-b7f4-8d73372cd8f8" alt="original signal" width="600"/>
 </div>
 
 
