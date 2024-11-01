@@ -31,7 +31,7 @@ The Mel scale is a perceptual scale of pitches, where each "Mel" unit represents
 The Mel scale divides the frequency domain into bins that are narrower at lower frequencies and wider at higher frequencies. This aligns with human auditory perception: we can easily distinguish between frequencies like 2000 Hz and 2500 Hz, but we struggle to detect differences between, for example, 10000 Hz and 10500 Hz, even though the frequency gap is the same.  
 
 In MFCC computation, the frequency of audio is transformed onto this Mel scale to capture the way humans hear sound.  
-This is done via computing the fourier transformation from the original signal, giving us a conversion from the time-domain into the frequency domain resulting in a spectrum of frequencies:  
+This is done via computing the fourier transformation (actual multiple) from the original signal, giving us a conversion from the time-domain into the frequency domain resulting in a spectrum of frequencies, then creating a spectogram and scaling it on the Mel scale:  
 
 #### From the original signal:
 
@@ -45,14 +45,14 @@ This is done via computing the fourier transformation from the original signal, 
     <img src="https://github.com/user-attachments/assets/f3362e5e-fc95-46c3-b7ee-7c3b82c49fd6" alt="original signal" width="600"/>
 </div>
 
-#### We then compute a spectogram using short, overlapping FFTs, using a sliding window
+#### To the spectogram using short, overlapping FFTs, using a sliding window:
 This shows how the frequencies in the audio change over time.
 
 <div align="center">
     <img src="https://github.com/user-attachments/assets/3fbb77ed-3d0f-4b0a-a8f7-a135d4136ba8" alt="original signal" width="600"/>
 </div>
 
-Finally we get the scaled MFCC version with more emphasis on the lower frequencies, where we map the mal-scale onto the y-axis.
+And Finally we get the scaled MFCC version with more emphasis on the lower frequencies, where we map the mal-scale onto the y-axis.
 On the left we see a higher resolution frequency, using 128 mel-scaled bins. Each bin corresponds wo a specific frequency range on the mel-scale.
 On the right we have a lower frequency resolution which is computationally less expensive and could also be used for simpler tasks.
 
