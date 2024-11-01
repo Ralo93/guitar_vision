@@ -72,7 +72,8 @@ In this example, we also use an A-Major chord, and its easiy to spot which pitch
 </div>
 
 There could be additional features which can be used in the future, like spectral contrast or RMS (Root Mean Square).  
-Spectral contrast measures the difference in amplitude between peaks and valleys in different frequency bands across time. It essentially highlights regions where the sound spectrum varies significantly within certain frequency bands.  
+Spectral contrast (left) measures the difference in amplitude between peaks and valleys in different frequency bands across time. It essentially highlights regions where the sound spectrum varies significantly within certain frequency bands.  
+RMS (Root Mean Square, left) measures the average power or loudness of the signal over time. It provides an understanding of the energy level at each frame, showing variations in loudness across the audio.  
 
 
 <div align="center">
