@@ -109,11 +109,17 @@ A-Minor:
 ## Data Augmentation
 To address the limitations of a small initial dataset, synthesized audio is added. This synthesis includes variations in pitch, duration, and noise levels, aiding in training a model that generalizes well to new audio inputs.
 
-## Model Architecture
+## Model Architecture of VGGish
 The classification pipeline uses VGGish as a feature extractor:
 1. **Mel Spectrogram Extraction**: Each audio sample is transformed into a mel spectrogram image.
 2. **Feature Extraction**: Using the VGGish model, features from the spectrograms are extracted.
 3. **Classification Layer**: A custom dense layer is added on top of the VGGish output for final pitch classification.
+
+VGGish model was trained on:
+
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/77606bc3-f451-42a4-a6d1-ce9ac680a5f7" alt="original signal" width="400"/>
+</div>
 
 ## Training
 1. **Transfer Learning**: The VGGish model is frozen initially, training only the classifier layers.
