@@ -49,11 +49,13 @@ This shows how the frequencies in the audio change over time.
     <img src="https://github.com/user-attachments/assets/3fbb77ed-3d0f-4b0a-a8f7-a135d4136ba8" alt="original signal" width="800"/>
 </div>
 
-#### Scaled version with more emphasis on the lower frequencies:
+#### Scaled MFCC version with more emphasis on the lower frequencies, where we map the mal-scale onto the y-axis:
 
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/928fb030-f6d2-4b86-88bc-d1f5ccb0f08f" alt="original signal" width="800"/>
+    <img src="https://github.com/user-attachments/assets/928fb030-f6d2-4b86-88bc-d1f5ccb0f08f" alt="original signal" width="400" style="display: inline-block; margin-right: 10px;"/>
+    <img src="https://github.com/user-attachments/assets/33380b38-10bc-473f-91f4-dc8216dd65b3" alt="transformed signal" width="400" style="display: inline-block;"/>
 </div>
+
 
 
 ## Features
