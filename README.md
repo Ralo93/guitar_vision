@@ -83,7 +83,7 @@ RMS (Root Mean Square, left) measures the average power or loudness of the signa
 
 For this project, I will focus on the first two features: Mel spectograms and chroma features.  
 
-## Features
+## First iteration
 - **Audio to Image Transformation**: Audio samples are converted into mel spectrogram images, creating a visual representation of pitch and frequency.
 - **Transfer Learning with VGGish**: The VGGish model, pre-trained on general audio data, is fine-tuned for pitch classification tasks.
 - **Data Synthesis and Augmentation**: Synthetic data generation is used to expand the dataset, introducing varied conditions that improve model performance and robustness.
