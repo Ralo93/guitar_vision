@@ -42,11 +42,17 @@ This is done via computing the fourier transformation from the original signal, 
     <img src="https://github.com/user-attachments/assets/f3362e5e-fc95-46c3-b7ee-7c3b82c49fd6" alt="original signal" width="800"/>
 </div>
 
-#### We then compute a spectogram using short, overlapping FFTs
+#### We then compute a spectogram using short, overlapping FFTs, using a sliding window
 This shows how the frequencies in the audio change over time.
 
 <div align="center">
     <img src="https://github.com/user-attachments/assets/3fbb77ed-3d0f-4b0a-a8f7-a135d4136ba8" alt="original signal" width="800"/>
+</div>
+
+#### Scaled version with more emphasis on the lower frequencies:
+
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/928fb030-f6d2-4b86-88bc-d1f5ccb0f08f" alt="original signal" width="800"/>
 </div>
 
 
