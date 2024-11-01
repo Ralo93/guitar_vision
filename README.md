@@ -81,6 +81,7 @@ RMS (Root Mean Square, left) measures the average power or loudness of the signa
     <img src="https://github.com/user-attachments/assets/26fb08b1-3fd3-4b67-a750-71b2f2a60a89" alt="transformed signal" width="400" style="display: inline-block;"/>
 </div>
 
+For this project, I will focus on the first two features: Mel spectograms and chroma features.  
 
 ## Features
 - **Audio to Image Transformation**: Audio samples are converted into mel spectrogram images, creating a visual representation of pitch and frequency.
