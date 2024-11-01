@@ -133,8 +133,6 @@ The idea is using it as a convolutional base (a feature extractor) and retrainin
 </div>
 
 
-
-
 ## Training
 1. **Transfer Learning**: The VGGish model is frozen initially, training only the classifier layers.
 2. **Fine-Tuning**: In later stages, the VGGish layers are gradually unfrozen to adapt more closely to pitch recognition.
