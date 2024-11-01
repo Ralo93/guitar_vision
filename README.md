@@ -74,8 +74,10 @@ In this example, we also use an A-Major chord, and its easiy to spot which pitch
 There could be additional features which can be used in the future, like spectral contrast or RMS (Root Mean Square).  
 Spectral contrast measures the difference in amplitude between peaks and valleys in different frequency bands across time. It essentially highlights regions where the sound spectrum varies significantly within certain frequency bands.  
 
+
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/2d9f936f-ab8e-47d4-b19f-cacdfde4e10b" alt="original signal" width="600"/>
+    <img src="https://github.com/user-attachments/assets/2d9f936f-ab8e-47d4-b19f-cacdfde4e10b" alt="original signal" width="400" style="display: inline-block; margin-right: 10px;"/>
+    <img src="https://github.com/user-attachments/assets/26fb08b1-3fd3-4b67-a750-71b2f2a60a89" alt="transformed signal" width="400" style="display: inline-block;"/>
 </div>
 
 
