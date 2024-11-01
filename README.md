@@ -96,8 +96,7 @@ The dataset is considerably small, only having 140 samples per chord in the trai
 
 Example F-Major:
 
-[🎵 Play F-Major](audio/F_Electric1_LInda_1.mp3)
-
+[▶️ Play F-Major](https://drive.google.com/file/d/1nlIc4Q0YVQoFdVYccCpqwh9jKLc-NPwL/view?usp=sharing)
 
 
 
