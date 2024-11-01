@@ -49,7 +49,9 @@ This shows how the frequencies in the audio change over time.
     <img src="https://github.com/user-attachments/assets/3fbb77ed-3d0f-4b0a-a8f7-a135d4136ba8" alt="original signal" width="600"/>
 </div>
 
-#### Scaled MFCC version with more emphasis on the lower frequencies, where we map the mal-scale onto the y-axis:
+Finally we get the scaled MFCC version with more emphasis on the lower frequencies, where we map the mal-scale onto the y-axis.
+On the left we see a higher resolution frequency, using 128 mel-scaled bins. Each bin corresponds wo a specific frequency range on the mel-scale.
+On the right we have a lower frequency resolution which is computationally less expensive and could also be used for simpler tasks.
 
 <div align="center">
     <img src="https://github.com/user-attachments/assets/928fb030-f6d2-4b86-88bc-d1f5ccb0f08f" alt="original signal" width="400" style="display: inline-block; margin-right: 10px;"/>
