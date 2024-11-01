@@ -24,7 +24,7 @@ The very first challenge lies in translating audio data (in this case .wav-files
 
 ### MFCCs
 The so called Mel-Frequency Cepstral Coefficients captures audio data in a way that resembles the human way of hearing, which puts an emphasis on lower frequencies.
-Let me try to explain:
+Let me try to explain:  
 The Mel scale is a perceptual scale of pitches, where each "Mel" unit represents an equally spaced step in perceived pitch. This scale is derived from how humans perceive sound frequencies; we are more sensitive to lower frequencies than higher ones.
 In MFCC computation, the frequency of audio is transformed onto this Mel scale to capture the way humans hear sound.
 This is done via computing the fourier transformation from the original signal, giving us a conversion from the time-domain into the frequency domain resulting in a spectrum of frequencies:
