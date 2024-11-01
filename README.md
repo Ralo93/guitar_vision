@@ -17,7 +17,27 @@ This project classifies musical pitches by leveraging computer vision, mel spect
 - [License](#license)
 
 ## Overview
-The goal of this project is to classify musical pitches accurately from audio recordings. The project uses mel spectrograms of audio samples, which are processed with computer vision techniques and analyzed using transfer learning from the VGGish model (a CNN pre-trained on audio data). Additionally, the project incorporates data synthesis to expand and diversify the dataset, improving the robustness and generalization of the model.
+The goal of this project is to classify musical pitches accurately from audio recordings. The project uses mel spectrograms of audio samples, which are processed with computer vision techniques and analyzed using transfer learning from the VGGish model (a CNN pre-trained on audio data). Additionally, the project incorporates data synthesis to expand and diversify the dataset, hoping to improving the robustness and generalization of the model.
+
+## Challenges
+The very first challenge lies in translating audio data (in this case .wav-files) into something resembling features. There are numeral features we could extract from audio data, like the following:
+
+### MFCCs
+The so called Mel-Frequency Cepstral Coefficients captures audio data in a way that resembles the human way of hearing, which puts an emphasis on lower frequencies.
+Let me try to explain:
+The Mel scale is a perceptual scale of pitches, where each "Mel" unit represents an equally spaced step in perceived pitch. This scale is derived from how humans perceive sound frequencies; we are more sensitive to lower frequencies than higher ones.
+In MFCC computation, the frequency of audio is transformed onto this Mel scale to capture the way humans hear sound.
+This is done via computing the fourier transformation from the original signal, giving us a conversion from the time-domain into the frequency domain resulting in a spectrum of frequencies:
+
+#### From the original signal:
+
+![image](https://github.com/user-attachments/assets/baab915a-25bb-420d-9388-0e2ec4338487)
+
+#### To the fourier transformed frequencies:
+
+![image](https://github.com/user-attachments/assets/f3362e5e-fc95-46c3-b7ee-7c3b82c49fd6)
+
+
 
 ## Features
 - **Audio to Image Transformation**: Audio samples are converted into mel spectrogram images, creating a visual representation of pitch and frequency.
