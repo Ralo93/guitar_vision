@@ -20,7 +20,7 @@ This project classifies musical pitches by leveraging computer vision, mel spect
 The goal of this project is to classify musical pitches accurately from audio recordings. The project uses mel spectrograms of audio samples, which are processed with computer vision techniques and analyzed using transfer learning from the VGGish model (a CNN pre-trained on audio data). Additionally, the project incorporates data synthesis to expand and diversify the dataset, hoping to improving the robustness and generalization of the model.
 
 ## Challenges
-The very first challenge lies in translating audio data (in this case .wav-files) into something resembling features. There are numeral features we could extract from audio data, like the following:
+The very first challenge lies in translating audio data (in this case .wav-files) into something we can use as features. There are numeral features we could extract from audio data, like the following:
 
 ### MFCCs
 The so called Mel-Frequency Cepstral Coefficients captures audio data in a way that resembles the human way of hearing, which puts an emphasis on lower frequencies.  
@@ -34,9 +34,14 @@ This is done via computing the fourier transformation from the original signal, 
 
 ![image](https://github.com/user-attachments/assets/baab915a-25bb-420d-9388-0e2ec4338487)
 
-#### To the fourier transformed frequencies:
+#### To the fourier transformed frequencies (FFT):
 
 ![image](https://github.com/user-attachments/assets/f3362e5e-fc95-46c3-b7ee-7c3b82c49fd6)
+
+#### We then compute a spectogram using short, overlapping FFTs
+This shows how the frequencies in the audio change over time.
+
+![image](https://github.com/user-attachments/assets/3fbb77ed-3d0f-4b0a-a8f7-a135d4136ba8)
 
 
 
