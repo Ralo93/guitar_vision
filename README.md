@@ -38,13 +38,16 @@ This is done via computing the fourier transformation from the original signal, 
 
 #### To the fourier transformed frequencies (FFT):
 
-![image](https://github.com/user-attachments/assets/f3362e5e-fc95-46c3-b7ee-7c3b82c49fd6)
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/f3362e5e-fc95-46c3-b7ee-7c3b82c49fd6" alt="original signal" width="800"/>
+</div>
 
 #### We then compute a spectogram using short, overlapping FFTs
 This shows how the frequencies in the audio change over time.
 
-![image](https://github.com/user-attachments/assets/3fbb77ed-3d0f-4b0a-a8f7-a135d4136ba8)
-
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/3fbb77ed-3d0f-4b0a-a8f7-a135d4136ba8" alt="original signal" width="800"/>
+</div>
 
 
 ## Features
