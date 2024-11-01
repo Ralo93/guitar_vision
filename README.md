@@ -96,10 +96,7 @@ The dataset is considerably small, only having 140 samples per chord in the trai
 
 Example F-Major:
 
-<audio controls>
-  <source src="audio/F_Electric1_LInda_1.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+[🎵 Play F-Major](audio/F_Electric1_LInda_1.mp3)
 
 
 
