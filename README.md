@@ -33,28 +33,35 @@ This is done via computing the fourier transformation from the original signal, 
 #### From the original signal:
 
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/baab915a-25bb-420d-9388-0e2ec4338487" alt="original signal" width="800"/>
+    <img src="https://github.com/user-attachments/assets/baab915a-25bb-420d-9388-0e2ec4338487" alt="original signal" width="600"/>
 </div>
 
 #### To the fourier transformed frequencies (FFT):
 
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/f3362e5e-fc95-46c3-b7ee-7c3b82c49fd6" alt="original signal" width="800"/>
+    <img src="https://github.com/user-attachments/assets/f3362e5e-fc95-46c3-b7ee-7c3b82c49fd6" alt="original signal" width="600"/>
 </div>
 
 #### We then compute a spectogram using short, overlapping FFTs, using a sliding window
 This shows how the frequencies in the audio change over time.
 
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/3fbb77ed-3d0f-4b0a-a8f7-a135d4136ba8" alt="original signal" width="800"/>
+    <img src="https://github.com/user-attachments/assets/3fbb77ed-3d0f-4b0a-a8f7-a135d4136ba8" alt="original signal" width="600"/>
 </div>
 
 #### Scaled MFCC version with more emphasis on the lower frequencies, where we map the mal-scale onto the y-axis:
 
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/928fb030-f6d2-4b86-88bc-d1f5ccb0f08f" alt="original signal" width="400" style="display: inline-block; margin-right: 10px;"/>
-    <img src="https://github.com/user-attachments/assets/33380b38-10bc-473f-91f4-dc8216dd65b3" alt="transformed signal" width="400" style="display: inline-block;"/>
+    <figure style="display: inline-block; margin-right: 20px;">
+        <img src="https://github.com/user-attachments/assets/928fb030-f6d2-4b86-88bc-d1f5ccb0f08f" alt="Original Signal" width="400"/>
+        <figcaption>High frequency resolution</figcaption>
+    </figure>
+    <figure style="display: inline-block;">
+        <img src="https://github.com/user-attachments/assets/33380b38-10bc-473f-91f4-dc8216dd65b3" alt="Transformed Signal" width="400"/>
+        <figcaption>Lower frequency resolution</figcaption>
+    </figure>
 </div>
+
 
 
 
