@@ -54,13 +54,14 @@ This shows how the frequencies in the audio change over time.
 <div align="center" style="display: flex; justify-content: center;">
     <div style="text-align: center; margin-right: 20px;">
         <img src="https://github.com/user-attachments/assets/928fb030-f6d2-4b86-88bc-d1f5ccb0f08f" alt="Original Signal" width="400"/>
-        <p>Original Signal</p>
+        <div>Original Signal</div>
     </div>
     <div style="text-align: center;">
         <img src="https://github.com/user-attachments/assets/33380b38-10bc-473f-91f4-dc8216dd65b3" alt="Transformed Signal" width="400"/>
-        <p>Transformed Signal</p>
+        <div>Transformed Signal</div>
     </div>
 </div>
+
 
 
 
