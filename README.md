@@ -105,15 +105,26 @@ A-Minor:
 [▶️ Play A-Minor](https://drive.google.com/file/d/151oZcGclXDwP9HWnFKk3NelCmvnMDQlH/view?usp=sharing)
 
 
-
-## Data Augmentation
-To address the limitations of a small initial dataset, synthesized audio is added. This synthesis includes variations in pitch, duration, and noise levels, aiding in training a model that generalizes well to new audio inputs.
-
 ## Model Architecture of VGGish
-The classification pipeline uses VGGish as a feature extractor:
-1. **Mel Spectrogram Extraction**: Each audio sample is transformed into a mel spectrogram image.
-2. **Feature Extraction**: Using the VGGish model, features from the spectrograms are extracted.
-3. **Classification Layer**: A custom dense layer is added on top of the VGGish output for final pitch classification.
+The classification pipeline uses VGGish as a feature extractor.
+
+VGGish is a CNN architecture, which was developed by Google in 2017 and adapted to audio signal classification. It is specifically designed to handle Mel spectograms with a length of 0.96 seconds.  
+It consists of the following main building blocks:  
+
+Convolutional Blocks: VGGish consists of multiple convolutional blocks, each comprising:  
+Convolutional layers with 96 filters of size 3x3  
+Batch normalization  
+ReLU activation  
+Max Pooling: Max pooling layers with a stride of 2 are used to downsample the feature maps.  
+Fully Connected Layers: The output of the convolutional blocks is flattened and fed into fully connected layers with ReLU activation.  
+Output Layer: The final output layer has a single neuron with a sigmoid activation function, producing a probability distribution over the 527 AudioSet classes.  
+
+Using it as a convolutional base:
+
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/9121f2f2-ac65-4be2-b7f4-8d73372cd8f8" alt="original signal" width="400"/>
+</div>
+
 
 VGGish model was trained on:
 
@@ -125,4 +136,9 @@ VGGish model was trained on:
 1. **Transfer Learning**: The VGGish model is frozen initially, training only the classifier layers.
 2. **Fine-Tuning**: In later stages, the VGGish layers are gradually unfrozen to adapt more closely to pitch recognition.
 3. **Data Augmentation**: Both real and synthetic data samples are used, applying techniques like pitch shifting and noise addition to improve model resilience.
+
+
+
+## Data Augmentation
+To address the limitations of a small initial dataset, synthesized audio is added. This synthesis includes variations in pitch, duration, and noise levels, aiding in training a model that generalizes well to new audio inputs.
 
