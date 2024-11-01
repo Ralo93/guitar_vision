@@ -89,9 +89,18 @@ For this project, I will focus on the first two features: Mel spectograms and ch
 - **Pitch Classification**: Model outputs the classified pitch from a given audio sample.
 
 ## Dataset
-The dataset consists of audio samples transformed into mel spectrograms:
-1. **Real Audio Samples**: Collected from available pitch-labeled datasets.
-2. **Synthetic Audio Samples**: Generated using audio synthesis to create a broader range of pitches and conditions.
+The dataset consists of audio samples, downloaded from kaggle at https://www.kaggle.com/datasets/fabianavinci/guitar-chords-v3  
+This dataset consists out of seven different chords, namely A-Minor, Bb-Major, C-Major, D-Minor, E-Minor, F-Major and G-Major, and consists of recordings of accoustic as well as electric guitar strums of those chords.  
+  
+The dataset is considerably small, only having 140 samples per chord in the training set, and 40 samples in the test set.
+
+Example F-Major:
+
+
+
+
+and transformed into mel spectrograms
+**Real Audio Samples**: Collected from available pitch-labeled datasets.
 
 ## Data Augmentation
 To address the limitations of a small initial dataset, synthesized audio is added. This synthesis includes variations in pitch, duration, and noise levels, aiding in training a model that generalizes well to new audio inputs.
