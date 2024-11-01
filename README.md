@@ -112,25 +112,27 @@ VGGish is a CNN architecture, which was developed by Google in 2017 and adapted 
 It consists of the following main building blocks:  
 
 Convolutional Blocks: VGGish consists of multiple convolutional blocks, each comprising:  
-Convolutional layers with 96 filters of size 3x3  
-Batch normalization  
-ReLU activation  
+- Convolutional layers with 96 filters of size 3x3  
+- Batch normalization  
+- ReLU activation  
 Max Pooling: Max pooling layers with a stride of 2 are used to downsample the feature maps.  
 Fully Connected Layers: The output of the convolutional blocks is flattened and fed into fully connected layers with ReLU activation.  
-Output Layer: The final output layer has a single neuron with a sigmoid activation function, producing a probability distribution over the 527 AudioSet classes.  
+Output Layer: The final output layer has a single neuron with a sigmoid activation function, producing a probability distribution over the 527 AudioSet classes.
 
-Using it as a convolutional base:
+This model was trained on: 
+
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/77606bc3-f451-42a4-a6d1-ce9ac680a5f7" alt="original signal" width="600"/>
+</div>
+
+Using it as a convolutional base and retraining a custom head:
 
 <div align="center">
     <img src="https://github.com/user-attachments/assets/9121f2f2-ac65-4be2-b7f4-8d73372cd8f8" alt="original signal" width="400"/>
 </div>
 
 
-VGGish model was trained on:
 
-<div align="center">
-    <img src="https://github.com/user-attachments/assets/77606bc3-f451-42a4-a6d1-ce9ac680a5f7" alt="original signal" width="400"/>
-</div>
 
 ## Training
 1. **Transfer Learning**: The VGGish model is frozen initially, training only the classifier layers.
