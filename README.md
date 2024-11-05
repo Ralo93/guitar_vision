@@ -114,10 +114,10 @@ It consists of the following main building blocks:
 Convolutional Blocks: VGGish consists of multiple convolutional blocks, each comprising:  
 - Convolutional layers with 96 filters of size 3x3  
 - Batch normalization  
-- ReLU activation  
+- ReLU activation
 Max Pooling: Max pooling layers with a stride of 2 are used to downsample the feature maps.  
 Fully Connected Layers: The output of the convolutional blocks is flattened and fed into fully connected layers with ReLU activation.  
-Output Layer: The final output layer has a single neuron with a sigmoid activation function, producing a probability distribution over the 527 AudioSet classes.
+Output Layer: The final layer should have 527 neurons with a softmax activation function to produce a probability distribution over the 527 classes in AudioSet.
 
 This model was trained on: 
 
