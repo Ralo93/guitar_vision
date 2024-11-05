@@ -130,7 +130,13 @@ Here we can see what VGGish was trained on:
 ## Training
 1. **Transfer Learning**: The VGGish model is frozen initially, training only the classifier layers.
 2. **Fine-Tuning**: In later stages, the VGGish layers are gradually unfrozen to adapt more closely to pitch recognition.
-3. **Data Augmentation**: Both real and synthetic data samples are used, applying techniques like pitch shifting and noise addition to improve model resilience.
+
+The custom classifier on top of the VGGish model had 8386 trainable parameters:
+  
+![image](https://github.com/user-attachments/assets/c7cd09cb-de4c-4858-b03d-95c4fc387964)  
+
+
+
 
 
 
