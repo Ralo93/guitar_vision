@@ -138,9 +138,10 @@ This did only perform around 55% overall accuracy. Slightly better than throwing
 
 The next step is to now fine-tune the last layers of the VGGish model together with the trained classifier on top:
 
+<div align="center">
 🟧 The unfrozen last layer
 🟥 The classifier on top
-
+</div>
 <div align="center">
     <img src="https://github.com/user-attachments/assets/eb5d6b3d-9fee-4c1f-9d31-6846fa959deb" alt="original signal" width="600"/>
 </div>
