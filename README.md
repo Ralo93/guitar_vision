@@ -126,7 +126,6 @@ Here we can see what VGGish was trained on:
 </div>
 
 
-
 ## Training
 1. **Transfer Learning**: The VGGish model is frozen initially, training only the classifier layers.
 2. **Fine-Tuning**: In later stages, the VGGish layers are gradually unfrozen to adapt more closely to pitch recognition.
@@ -139,15 +138,13 @@ This did only perform around 55% overall accuracy. Slightly better than throwing
 
 The next step is to now fine-tune the last layers of the VGGish model together with the trained classifier on top:
 
-In <span style="color: orange;">orange</span>: The unfrozen last layer  
-In <span style="color: red;">red</span>: The classifier on top
+In <span style="color: orange;">orange </span>: The unfrozen last layer  
+In <span style="color: red;">red </span>: The classifier on top
 
 
 <div align="center">
     <img src="https://github.com/user-attachments/assets/eb5d6b3d-9fee-4c1f-9d31-6846fa959deb" alt="original signal" width="600"/>
 </div>
-
-
 
 
 ## Data Augmentation
