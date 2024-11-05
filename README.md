@@ -131,15 +131,17 @@ Here we can see what VGGish was trained on:
 1. **Transfer Learning**: The VGGish model is frozen initially, training only the classifier layers.
 2. **Fine-Tuning**: In later stages, the VGGish layers are gradually unfrozen to adapt more closely to pitch recognition.
 
-
-### Not normalized input vs. normalized input:  
-
+  
+#### Not normalized input vs. normalized input:  
+  
 <div align="center">
     <img src="https://github.com/user-attachments/assets/1afb41ca-b614-4675-9951-e055aedd14d9" alt="original signal" width="400" style="display: inline-block; margin-right: 10px;"/>
     <img src="https://github.com/user-attachments/assets/9faac160-210e-4511-ab7f-a2e9301cdd7c" alt="transformed signal" width="400" style="display: inline-block;"/>
 </div> 
 
+We can see here, that normalizing the inputs to the model "smoothens" the loss curve.
 
+#### Transfer learning  
 The custom classifier on top of the VGGish model had 8386 trainable parameters:
   
 ![image](https://github.com/user-attachments/assets/c7cd09cb-de4c-4858-b03d-95c4fc387964)  
