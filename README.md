@@ -127,8 +127,18 @@ Here we can see what VGGish was trained on:
 
 
 ## Training
+0. **Normalizing the images**: I use normalization for the input images, because it smoothens the training curve.
 1. **Transfer Learning**: The VGGish model is frozen initially, training only the classifier layers.
 2. **Fine-Tuning**: In later stages, the VGGish layers are gradually unfrozen to adapt more closely to pitch recognition.
+
+
+### Not normalized input vs. normalized input:  
+
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/1afb41ca-b614-4675-9951-e055aedd14d9" alt="original signal" width="400" style="display: inline-block; margin-right: 10px;"/>
+    <img src="https://github.com/user-attachments/assets/9faac160-210e-4511-ab7f-a2e9301cdd7c" alt="transformed signal" width="400" style="display: inline-block;"/>
+</div> 
+
 
 The custom classifier on top of the VGGish model had 8386 trainable parameters:
   
@@ -151,22 +161,22 @@ The next step is to now fine-tune the last layers of the VGGish model together w
     <img src="https://github.com/user-attachments/assets/eb5d6b3d-9fee-4c1f-9d31-6846fa959deb" alt="original signal" width="400"/>
 </div>
 
+  
+### The model was now successively trained on unfrozen last layers:
 
-The model was now successively trained on unfrozen last layers:
-
-### Unfrozen classifier and unfrozen last layer:  
+Unfrozen classifier and unfrozen last layer:  
 
 <div align="center">
     <img src="https://github.com/user-attachments/assets/b32d9d1c-f69d-4bdf-932d-cc19b8b060e6" alt="original signal" width="400"/>
 </div>
 
-### Unfrozen classifier and unfrozen two last layers:  
+Unfrozen classifier and unfrozen two last layers:  
 
 <div align="center">
     <img src="https://github.com/user-attachments/assets/ffd7fbf6-4c87-43e3-bf4c-504d0605403a" alt="original signal" width="400"/>
 </div>
 
-
+We can clearly see that the model learns 
 
 
 ## Data Augmentation
