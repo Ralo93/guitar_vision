@@ -151,8 +151,8 @@ This did only perform around 55% overall accuracy. Slightly better than throwing
 <div align="center">
     <img src="https://github.com/user-attachments/assets/f0c5a40e-c71c-4a53-9f43-10c1106e30a5" alt="original signal" width="400"/>
 </div>
-
-
+  
+  
 The next step is to now fine-tune the last layers of the VGGish model together with the trained classifier on top:
 
 <div align="center">
