@@ -182,7 +182,7 @@ Unfrozen classifier and unfrozen two last layers:
 </div>
 
   
-We can clearly see that the model starts improving on the validation set, which is great, even though the performance is not that great. But keep in mind the dataset we work with is extremely small. 
+We can clearly see that the model starts improving on the validation set, which is great, even though the performance is not that strong. But keep in mind the dataset we work with is extremely small. 
 
   
 ## Second Iteration
