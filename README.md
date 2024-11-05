@@ -119,18 +119,12 @@ Max Pooling: Max pooling layers with a stride of 2 are used to downsample the fe
 Fully Connected Layers: The output of the convolutional blocks is flattened and fed into fully connected layers with ReLU activation.  
 Output Layer: The final layer should have 527 neurons with a softmax activation function to produce a probability distribution over the 527 classes in AudioSet.
 
-This model was trained on: 
+Here we can see what VGGish was trained on: 
 
 <div align="center">
     <img src="https://github.com/user-attachments/assets/77606bc3-f451-42a4-a6d1-ce9ac680a5f7" alt="original signal" width="600"/>
 </div>
 
-  
-The idea is using it as a convolutional base (a feature extractor) and retraining a custom head:  
-  
-<div align="center">
-    <img src="https://github.com/user-attachments/assets/9121f2f2-ac65-4be2-b7f4-8d73372cd8f8" alt="original signal" width="600"/>
-</div>
 
 
 ## Training
