@@ -182,9 +182,9 @@ Unfrozen classifier and unfrozen two last layers:
 </div>
 
   
-  We can clearly see that the model starts improving on the validation set, which is great! 
+We can clearly see that the model starts improving on the validation set, which is great, even though the performance is not that great. But keep in mind the dataset we work with is extremely small. 
 
-
-## Data Augmentation
-To address the limitations of a small initial dataset, synthesized audio is added. This synthesis includes variations in pitch, duration, and noise levels, aiding in training a model that generalizes well to new audio inputs.
+  
+## Second Iteration
+Now it is time to try out the actual pitch detection.
 
