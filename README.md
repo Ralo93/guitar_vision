@@ -135,6 +135,14 @@ The custom classifier on top of the VGGish model had 8386 trainable parameters:
   
 ![image](https://github.com/user-attachments/assets/c7cd09cb-de4c-4858-b03d-95c4fc387964)  
 
+This did only perform around 55% overall accuracy. Slightly better than throwing a coin.  
+
+The next step is to now fine-tune the last layers of the VGGish model together with the trained classifier on top:
+
+In orange: The unfrozen last layer
+In red: The classifier on top  
+
+![image](https://github.com/user-attachments/assets/eb5d6b3d-9fee-4c1f-9d31-6846fa959deb)
 
 
 
