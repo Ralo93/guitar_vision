@@ -178,7 +178,8 @@ Unfrozen classifier and unfrozen two last layers:
     <img src="https://github.com/user-attachments/assets/ffd7fbf6-4c87-43e3-bf4c-504d0605403a" alt="original signal" width="400"/>
 </div>
 
-We can clearly see that the model learns 
+  
+  We can clearly see that the model starts improving on the validation set, which is great! 
 
 
 ## Data Augmentation
