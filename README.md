@@ -84,6 +84,9 @@ RMS (Root Mean Square, left) measures the average power or loudness of the signa
 For this project, I will focus on the first two features: Mel spectograms and chroma features.  
 
 # First iteration
+
+##### For the first iteration of this project, I decided to simply train a major/minor distinguisher, as I thought this might be easier for the start and get used to the transfer learning approach. So for the start, we have a binary classification problem here.
+
 - **Audio to Image Transformation**: Audio samples are converted into mel spectrogram images, creating a visual representation of pitch and frequency.
 - **Transfer Learning with VGGish**: The VGGish model, pre-trained on general audio data, is fine-tuned for pitch classification tasks.
 - **Pitch Classification**: Model outputs the classified pitch from a given audio sample.
