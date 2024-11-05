@@ -137,9 +137,8 @@ The custom classifier on top of the VGGish model had 8386 trainable parameters:
 This did only perform around 55% overall accuracy. Slightly better than throwing a coin:
 
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/f0c5a40e-c71c-4a53-9f43-10c1106e30a5" alt="original signal" width="600"/>
+    <img src="https://github.com/user-attachments/assets/f0c5a40e-c71c-4a53-9f43-10c1106e30a5" alt="original signal" width="400"/>
 </div>
-
 
 
 The next step is to now fine-tune the last layers of the VGGish model together with the trained classifier on top:
@@ -151,6 +150,18 @@ The next step is to now fine-tune the last layers of the VGGish model together w
 <div align="center">
     <img src="https://github.com/user-attachments/assets/eb5d6b3d-9fee-4c1f-9d31-6846fa959deb" alt="original signal" width="600"/>
 </div>
+
+
+The model was now successively trained on unfrozen last layers:
+
+Unfrozen classifier and unfrozen last layer:  
+![allunfrozen, epoch2](https://github.com/user-attachments/assets/b32d9d1c-f69d-4bdf-932d-cc19b8b060e6)  
+
+Unfrozen classifier and unfrozen two last layers:  
+![allunfrozen_5epochs](https://github.com/user-attachments/assets/ffd7fbf6-4c87-43e3-bf4c-504d0605403a)  
+
+
+
 
 
 ## Data Augmentation
