@@ -130,7 +130,7 @@ Here we can see what VGGish was trained on:
 
 
 ## Training
-0. **Normalizing the images**: I use normalization for the input images, because it smoothens the training curve.
+0. **Preprocessing the images**: After transforming the audio files into Mel spectograms, I use normalization for the input images, because it smoothens the training curve.
 1. **Transfer Learning**: The VGGish model is frozen initially, training only the classifier layers.
 2. **Fine-Tuning**: In later stages, the VGGish layers are gradually unfrozen to adapt more closely to pitch recognition.
 
