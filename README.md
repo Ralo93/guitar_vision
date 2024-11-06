@@ -169,13 +169,13 @@ The next step is to now fine-tune the last layers of the VGGish model together w
   
 ### The model was now successively trained on unfrozen last layers:
 
-Unfrozen classifier and unfrozen last layer:  
+Unfrozen classifier and unfrozen last layer of the base model:  
 
 <div align="center">
     <img src="https://github.com/user-attachments/assets/b32d9d1c-f69d-4bdf-932d-cc19b8b060e6" alt="original signal" width="400"/>
 </div>
 
-Unfrozen classifier and unfrozen two last layers:  
+Unfrozen classifier and unfrozen two last layers of the base model:  
 
 <div align="center">
     <img src="https://github.com/user-attachments/assets/ffd7fbf6-4c87-43e3-bf4c-504d0605403a" alt="original signal" width="400"/>
