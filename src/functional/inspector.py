@@ -60,6 +60,8 @@ class ModelInspector:
 
         self.inspect_model()
 
+        return self.model
+
 
     def print_layer_names(self):
         """

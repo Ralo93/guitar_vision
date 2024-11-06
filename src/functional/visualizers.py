@@ -41,7 +41,6 @@ class AudioFeatureVisualizer:
         plt.show()
 
 
-
     def extract_features(self):
         # Extract MFCCs
         self.mfcc = librosa.feature.mfcc(y=self.y, sr=self.sr, n_mfcc=self.n_mfcc)

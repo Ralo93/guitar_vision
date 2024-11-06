@@ -78,6 +78,43 @@ class ChordDataset(Dataset):
             mel_spec = mel_spec[:, :, start:start + target_length]
         
         # Add channel dimension
-       # mel_spec = mel_spec.unsqueeze(0)
+        # mel_spec = mel_spec.unsqueeze(0)
             
         return mel_spec, torch.tensor(self.labels[idx], dtype=torch.float32)
+    
+
+
+
+import torch
+from torch.utils.data import Dataset
+import torchaudio
+import torchaudio.transforms as T
+
+class PitchChordDataset(Dataset):
+    
+    def __init__(self, file_paths, labels, sample_rate=16000):
+        self.file_paths = file_paths
+        self.labels = labels
+        self.sample_rate = sample_rate
+        
+    def __len__(self):
+        return len(self.file_paths)
+    
+    def __getitem__(self, idx):
+        # Load the audio file
+        waveform, sr = torchaudio.load(self.file_paths[idx])
+        
+        # Resample if the sample rate is different
+        if sr != self.sample_rate:
+            resampler = T.Resample(sr, self.sample_rate)
+            waveform = resampler(waveform)
+        
+        # Convert to mono if stereo
+        if waveform.size(0) > 1:
+            waveform = torch.mean(waveform, dim=0, keepdim=True)
+        
+        # Normalize the waveform
+        waveform = (waveform - waveform.mean()) / (waveform.std() + 1e-8)
+        
+        # Ensure the waveform is the correct shape for CREPE (batch_size, 1, samples)
+        return waveform, torch.tensor(self.labels[idx], dtype=torch.float32)
