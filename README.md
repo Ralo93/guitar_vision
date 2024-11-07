@@ -69,7 +69,7 @@ RMS (Root Mean Square, left) measures the average power or loudness of the signa
 
 For this project, I will focus on the first two features: Mel spectograms and chroma features.  
 
-# First iteration
+## First iteration
 
 ##### For the first iteration of this project, I decided to simply train a major/minor distinguisher, as I thought this might be easier for the start and get used to the transfer learning approach. So for the start, we have a binary classification problem here.
 
@@ -209,7 +209,7 @@ Therefore I tried another resizing of the images, using a resizing to 100x100 pi
 As this did not improve our prediction overall, with a peak validation accuracy at around 82%.  
 
 
-Another approach could be to make the network even smaller and reduce the number of parameters. This yielded slightly better results with a peak validation accuracy of 86%:  
+Another approach could be to make the network even smaller and reduce the number of parameters, so I reduced the last dense layer size from 128 to 64. This yielded slightly better results with a peak validation accuracy of 86%:  
 
 <div align="center">
     <img src="https://github.com/user-attachments/assets/30c8ff3c-531c-41f8-89fb-868dfb3e7dcf" alt="original signal" width="700"/>
