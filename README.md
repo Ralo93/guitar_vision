@@ -205,3 +205,9 @@ Using chroma features wich I preprocessed from the different pitches, reduced to
     <img src="https://github.com/user-attachments/assets/044bcf67-f90c-425d-8796-e675548ace45" alt="original signal" width="200"/>
 </div>
 
+
+Using Adam as an optimizer and categorical, I train the network on the small dataset on 20 epochs:  
+
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/30c8ff3c-531c-41f8-89fb-868dfb3e7dcf" alt="original signal" width="700"/>
+</div>
