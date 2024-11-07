@@ -69,7 +69,7 @@ RMS (Root Mean Square, left) measures the average power or loudness of the signa
 
 For this project, I will focus on the first two features: Mel spectograms and chroma features.  
 
-## First iteration
+## First iteration (using Pytorch)
 
 ##### For the first iteration of this project, I decided to simply train a major/minor distinguisher, as I thought this might be easier for the start and get used to the transfer learning approach. So for the start, we have a binary classification problem here.
 
@@ -171,7 +171,7 @@ Unfrozen classifier and unfrozen two last layers of the base model:
 We can clearly see that the model starts improving on the validation set, which is great, even though the performance is not that strong. But keep in mind the dataset we work with is extremely small. 
 
   
-## Second Iteration
+## Second Iteration (using Tensorflow)
 Now it is time to try out the actual pitch detection. For this I chose to try out the chroma features of the different pitches, and for the beginning, a simple CNN with this architecture:
 
 <div align="center">
