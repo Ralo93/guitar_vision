@@ -3,6 +3,11 @@
 This project classifies musical pitches by leveraging computer vision, mel spectrograms, and transfer learning based on a pre-trained VGGish model. It utilizes synthesized data to augment the dataset, enabling accurate pitch classification even with limited initial data.
 
 ## Overview
+
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/7ee2112c-556e-497b-a71e-77f66be5c185" alt="original signal" width="600"/>
+</div>
+
 The goal of this project is to classify musical pitches accurately from audio recordings. The project uses mel spectrograms of audio samples, which are processed with computer vision techniques and analyzed using transfer learning from the VGGish model (a CNN pre-trained on audio data). Additionally, the project incorporates data synthesis to expand and diversify the dataset, hoping to improving the robustness and generalization of the model.
 
 ## Challenges
