@@ -189,12 +189,10 @@ We can clearly see that the model starts improving on the validation set, which 
 Now it is time to try out the actual pitch detection. For this I chose to try out the chroma features of the different pitches, and for the beginning, a simple CNN with this architecture:
 
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/e5ff8914-fffa-4f7e-9878-ffe04aaa13d6" alt="original signal" width="700"/>
+    <img src="https://github.com/user-attachments/assets/6799c90b-6d99-404a-95ff-e47eff85af16" alt="original signal" width="700"/>
 </div>
 
-Using chroma features wich I preprocessed from the different pitches, reduced to grey scale and scaled to a smaller size starting with 40x40 pixels.  
-  
-Some Examples:  
+Using chroma features wich I preprocessed from the different pitches, reduced to grey scale and scaled to a smaller size starting with 40x40 pixels. Some Examples:  
 
 #### A-Minor:
 <div align="center">
