@@ -1,20 +1,20 @@
 import tensorflow as tf
 
-class MyModel(tf.keras.Model):
+class SimpleCNN(tf.keras.Model):
     def __init__(self, loss, optimizer):
         super().__init__()
         self.loss = loss
         self.optimizer = optimizer
         self.conv1 = tf.keras.layers.Conv2D(32, kernel_size=3, activation='relu')
         #self.norm = tf.keras.layers.BatchNormalization()
-        self.drop = tf.keras.layers.Dropout(0.5)
+        #self.drop = tf.keras.layers.Dropout(0.5)
         self.flatten = tf.keras.layers.Flatten()
         self.dense1 = tf.keras.layers.Dense(64, activation='relu')
         self.dense2 = tf.keras.layers.Dense(10)
 
     def call(self, x): # in pytorch this would be the forward method
         x = self.conv1(x)
-        x = self.drop(x)
+        #x = self.drop(x)
         x = self.flatten(x)
         x = self.dense1(x)
         return self.dense2(x)

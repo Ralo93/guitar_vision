@@ -3,37 +3,11 @@ from matplotlib import pyplot as plt
 import numpy as np
 import tensorflow as tf
 from sklearn.preprocessing import LabelEncoder
+from utils import *
 
 
-def gather_file_paths(dir_path):
-        file_paths = []
-        for root, dirs, files in os.walk(dir_path):
-            wav_files = [os.path.join(root, f) for f in files if f.endswith('.png')]
-            file_paths.extend(wav_files)
-        return file_paths
-
-def extract_label(file_path):
-        # Extract the file name from the full path
-        file_name = os.path.basename(file_path)
-        # Split the filename at the first space and take the first part (before the space)
-        label = file_name.split("_")[0]
-        return label
-
-from PIL import Image
-
-def load_chroma_images(image_paths):
-    chroma_images = []
-    for image_path in image_paths:
-        # Load image, convert to grayscale (if needed), and resize to a fixed size if required
-        img = Image.open(image_path).convert('L')  # Convert to grayscale
-        img = np.array(img).astype("float32") / 255.0  # Normalize to [0, 1]
-        # Add a channel dimension to match CNN input requirements
-        img = np.expand_dims(img, axis=-1)
-        chroma_images.append(img)
-    return np.array(chroma_images)
-
-file_dir_train = r'C:\Users\rapha\repositories\guitar_vision\chromas\small\training'
-file_dir_test = r'C:\Users\rapha\repositories\guitar_vision\chromas\small\testing'
+file_dir_train = r'chromas\small\training'
+file_dir_test = r'chromas\small\testing'
 
 # Gather all file paths from the directory
 file_paths_train = gather_file_paths(file_dir_train)
@@ -69,7 +43,6 @@ optimizer = tf.keras.optimizers.Adam()
 from models import *
 
 # for plotting in tensorboard
-
 train_loss = tf.keras.metrics.Mean() #will take the mean from the 32-dim vector
 test_loss = tf.keras.metrics.Mean()
 train_accuracy = tf.keras.metrics.SparseCategoricalAccuracy()
@@ -78,7 +51,7 @@ test_accuracy = tf.keras.metrics.SparseCategoricalAccuracy()
 EPOCHS = 20
 writer = tf.summary.create_file_writer('summary/other') #important! so each run will be its own graph
 
-model = MyModel(loss_object, optimizer=optimizer)
+model = SimpleCNN(loss_object, optimizer=optimizer)
 
 model.compile()
 print(model.summary())
@@ -122,7 +95,7 @@ for epoch in range(EPOCHS):
         f'Train Accuracy: {train_accuracy.result()}, '
         f'Test Accuracy: {test_accuracy.result()}'
     )
-    print("message?")
+   
     print(message)
 
     # Store the loss and accuracy values for plotting
@@ -132,9 +105,13 @@ for epoch in range(EPOCHS):
     test_accuracies.append(test_accuracy.result().numpy())
   
 # Plot the training and validation loss
-# Set a modern, clean style
+
+# Plot the training and validation loss
 plt.style.use('ggplot')
 plt.figure(figsize=(10, 4))
+
+# Loss Plot
+plt.subplot(1, 2, 1)
 plt.plot(train_losses, label="Train Loss")
 plt.plot(test_losses, label="Validation Loss")
 plt.xlabel("Epoch")
@@ -142,4 +119,16 @@ plt.ylabel("Loss")
 plt.title("Training and Validation Loss")
 plt.legend()
 plt.grid(True, linestyle='--', alpha=0.5)
+
+# Accuracy Plot
+plt.subplot(1, 2, 2)
+plt.plot(train_accuracies, label="Train Accuracy")
+plt.plot(test_accuracies, label="Validation Accuracy")
+plt.xlabel("Epoch")
+plt.ylabel("Accuracy")
+plt.title("Training and Validation Accuracy")
+plt.legend()
+plt.grid(True, linestyle='--', alpha=0.5)
+
+plt.tight_layout()
 plt.show()
