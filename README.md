@@ -2,25 +2,16 @@
 
 This project classifies musical pitches by leveraging computer vision, mel spectrograms, and transfer learning based on a pre-trained VGGish model. It utilizes synthesized data to augment the dataset, enabling accurate pitch classification even with limited initial data.
 
-## Table of Contents
-- [Overview](#overview)
-- [Features](#features)
-- [Dataset](#dataset)
-- [Data Augmentation](#data-augmentation)
-- [Model Architecture](#model-architecture)
-- [Training](#training)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Results](#results)
-- [Future Work](#future-work)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Overview
+
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/7ee2112c-556e-497b-a71e-77f66be5c185" alt="original signal" width="600"/>
+</div>
+
 The goal of this project is to classify musical pitches accurately from audio recordings. The project uses mel spectrograms of audio samples, which are processed with computer vision techniques and analyzed using transfer learning from the VGGish model (a CNN pre-trained on audio data). Additionally, the project incorporates data synthesis to expand and diversify the dataset, hoping to improving the robustness and generalization of the model.
 
 ## Challenges
-The very first challenge lies in translating audio data (in this case .wav-files) into something we can use as features. There are numeral features we could extract from audio data, like the following:
+Having only a small dataset makes this challenging in terms of algorithm and architecture choice. Another challenge lies in translating audio data (in this case .wav-files) into something we can use as features. There are numeral features we could extract from audio data, like the following:
 
 ### MFCCs
 The so called Mel-Frequency Cepstral Coefficients captures audio data in a way that resembles the human way of hearing, which puts an emphasis on lower frequencies.  
@@ -83,7 +74,7 @@ RMS (Root Mean Square, left) measures the average power or loudness of the signa
 
 For this project, I will focus on the first two features: Mel spectograms and chroma features.  
 
-# First iteration
+## First iteration (using Pytorch)
 
 ##### For the first iteration of this project, I decided to simply train a major/minor distinguisher, as I thought this might be easier for the start and get used to the transfer learning approach. So for the start, we have a binary classification problem here.
 
@@ -185,6 +176,49 @@ Unfrozen classifier and unfrozen two last layers of the base model:
 We can clearly see that the model starts improving on the validation set, which is great, even though the performance is not that strong. But keep in mind the dataset we work with is extremely small. 
 
   
-## Second Iteration
-Now it is time to try out the actual pitch detection.
+## Second Iteration (using Tensorflow)
+Now it is time to try out the actual pitch detection. For this I chose to try out the chroma features of the different pitches, and for the beginning, a simple CNN with this architecture:
 
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/6799c90b-6d99-404a-95ff-e47eff85af16" alt="original signal" width="700"/>
+</div>
+
+Using chroma features wich I preprocessed from the different pitches, reduced to grey scale and scaled to a smaller size starting with 40x40 pixels. Some Examples:  
+
+#### A-Minor:
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/7be53b8e-e3e6-4308-9f03-9b5e049e1382" alt="original signal" width="200"/>
+</div>
+
+
+#### F-Major:  
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/044bcf67-f90c-425d-8796-e675548ace45" alt="original signal" width="200"/>
+</div>
+  
+  
+Using Adam as an optimizer and SparseCategoricalCrossentropy as a loss function, I train the network on the small dataset on 20 epochs:  
+
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/5e5420ed-daac-4b1a-876a-361589bda083" alt="original signal" width="700"/>
+</div>
+We can already see that a validation accuracy of 85% is a good result, considering we have seven different classes to predict. We could argue that the baseline for this kind of model is around ~14%, representing a random classifier.  
+But we also see that the model overfits to the training data, as the train accuracy is almost at 100%. To tackle this, I introduced regularization in form of a batchnormalization layer, a dropout layer after the conv-layer with 50% dropout chance.  
+Unfortunately, this did not improve the models validation accuracy much.  
+Therefore I tried another resizing of the images, using a resizing to 100x100 pixels as an experiment.  
+
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/4420988e-478c-419e-bd72-c8a30a9cd408" alt="original signal" width="700"/>
+</div>
+  
+As this did not improve our prediction overall, with a peak validation accuracy at around 82%.  
+
+
+Another approach could be to make the network even smaller and reduce the number of parameters, so I reduced the last dense layer size from 128 to 64. This yielded slightly better results with a peak validation accuracy of 86%:  
+
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/30c8ff3c-531c-41f8-89fb-868dfb3e7dcf" alt="original signal" width="700"/>
+</div>
+
+  
+To further tackle overfitting, it makes sense to add more training data. So a data augmentation technique would come in handy, unfortunately this is not as simple as usual image augmentation techs like rotating, shifting or blurring as this would not represent a real chroma feature. There are still augmentation strategies on an image level which could work, which are: adding mild noise, temporal shifting on the horizontal axis or brightness adjustments. This will be part of the third iteration, where I will create a lot more data and hopefully run into underfitting at some point so we can again utilize transfer learning! Another strategy I will try will be to use the chroma features in transfer learning directly without adding new data. Stay tuned!
