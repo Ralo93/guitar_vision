@@ -209,5 +209,25 @@ Using chroma features wich I preprocessed from the different pitches, reduced to
 Using Adam as an optimizer and SparseCategoricalCrossentropy as a loss function, I train the network on the small dataset on 20 epochs:  
 
 <div align="center">
+    <img src="https://github.com/user-attachments/assets/5e5420ed-daac-4b1a-876a-361589bda083" alt="original signal" width="700"/>
+</div>
+We can already see that a validation accuracy of 85% is a good result, considering we have seven different classes to predict. We could argue that the baseline for this kind of model is around ~14%, representing a random classifier.  
+But we also see that the model overfits to the training data, as the train accuracy is almost at 100%. To tackle this, I introduced regularization in form of a batchnormalization layer, a dropout layer after the conv-layer with 50% dropout chance.  
+Unfortunately, this did not improve the models validation accuracy much.  
+Therefore I tried another resizing of the images, using a resizing to 100x100 pixels as an experiment.  
+
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/4420988e-478c-419e-bd72-c8a30a9cd408" alt="original signal" width="700"/>
+</div>
+  
+As this did not improve our prediction overall, with a peak validation accuracy at around 82%.  
+
+
+Another approach could be to make the network even smaller and reduce the number of parameters. This yielded slightly better results with a peak validation accuracy of 86%:  
+
+<div align="center">
     <img src="https://github.com/user-attachments/assets/30c8ff3c-531c-41f8-89fb-868dfb3e7dcf" alt="original signal" width="700"/>
 </div>
+
+  
+To further tackle overfitting, it makes sense to add more training data. So a data augmentation technique would come in handy, unfortunately this is not as simple as usual image augmentation techs like rotating, shifting, blurring etc. as this would not represent a real chroma feature.
