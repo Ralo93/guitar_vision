@@ -198,12 +198,12 @@ Some Examples:
 
 #### A-Minor:
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/7be53b8e-e3e6-4308-9f03-9b5e049e1382" alt="original signal" width="400"/>
+    <img src="https://github.com/user-attachments/assets/7be53b8e-e3e6-4308-9f03-9b5e049e1382" alt="original signal" width="200"/>
 </div>
 
 
 #### F-Major:  
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/044bcf67-f90c-425d-8796-e675548ace45" alt="original signal" width="400"/>
+    <img src="https://github.com/user-attachments/assets/044bcf67-f90c-425d-8796-e675548ace45" alt="original signal" width="200"/>
 </div>
 
